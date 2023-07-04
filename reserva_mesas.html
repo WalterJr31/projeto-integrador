@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reserva de Mesas</title>
+</head>
+
+<body>
+    <h1>Reserva de Mesas</h1>
+
+    <form action="processar_reserva.php" method="POST" onsubmit="return validarFormulario()">
+        <label for="mesa">Escolha uma mesa:</label>
+        <select name="mesa" id="mesa" required>
+            <option value="" disabled selected>Selecione uma mesa</option>
+            <option value="mesa1">Mesa 1</option>
+            <option value="mesa2">Mesa 2</option>
+            <option value="mesa3">Mesa 3</option>
+            <option value="mesa3">Mesa 4</option>
+            <option value="mesa3">Mesa 5</option>
+            <option value="mesa3">Mesa 6</option>
+            <option value="mesa3">Mesa 7</option>
+            <option value="mesa3">Mesa 8</option>
+            <option value="mesa3">Mesa 9</option>
+            <option value="mesa3">Mesa 10</option>
+            <option value="mesa3">Mesa 11</option>
+            <option value="mesa3">Mesa 12</option>
+            <option value="mesa3">Mesa 13</option>
+            <option value="mesa3">Mesa 14</option>
+            <option value="mesa3">Mesa 15</option>
+            <!-- Adicione outras opções de mesa conforme necessário -->
+        </select>
+
+        <br><br>
+
+        <label for="nome">Seu nome:</label>
+        <input type="text" name="nome" id="nome" required>
+
+        <br><br>
+
+        <label for="data">Data da reserva:</label>
+        <input type="date" name="data" id="data" required>
+
+        <br><br>
+
+        <input type="submit" value="Reservar">
+    </form>
+
+    <script>
+        function validarFormulario() {
+            var mesa = document.getElementById("mesa").value;
+            var nome = document.getElementById("nome").value;
+            var data = document.getElementById("data").value;
+
+            // Verifica se todos os campos foram preenchidos
+            if (mesa === "" || nome === "" || data === "") {
+                alert("Por favor, preencha todos os campos.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
